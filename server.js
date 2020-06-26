@@ -316,7 +316,7 @@ function addRole(){
       },
       function(err) {
         if (err) throw err;
-        console.log("Your department was created successfully!");
+        console.log("Your role was created successfully!");
         start();
       })
       
