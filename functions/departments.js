@@ -11,33 +11,35 @@ function allDepartment() {
 } 
 
 // ===================================================================
-// Add  **WORKING**
+// Add  **WORKING*****************************************************
 // ===================================================================
 function addDepartment(){
-    inquirer
-    .prompt([
-      {
-        name: "dName",
-        type: "input",
-        message: "What department would you like to add?"
-      },
-  ])
-  .then(function(answer) {
-    // when finished prompting, insert a new item into the db with that info
-    connection.query(
-      "INSERT INTO department SET ?",
-      { 
-        name: answer.dName,
-      },
-      function(err) {
-        if (err) throw err;
-        console.table(res);
-        console.log("Your department was created successfully!");
-        start();
-      })
+  inquirer
+  .prompt([
+    {
+      name: "dName",
+      type: "input",
+      message: "What department would you like to add?"
+    },
+])
+.then(function(answer) {
+  // when finished prompting, insert a new item into the db with that info
+  connection.query(
+    "INSERT INTO department SET ?",
+    { 
+      name: answer.dName,
+    },
+    function(err) {
+      if (err) throw err;
+      console.log("Your department was created successfully!");
+      start();
     })
-  }
+  })
+}
 
 // ===================================================================
-// Delete
+// Delete  ***NOT NEEDED*****
 // ===================================================================
+
+
+module.exports = departments;

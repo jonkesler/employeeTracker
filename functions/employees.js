@@ -1,15 +1,14 @@
 // ===================================================================
-// Query
+// Query  **Just Needs Manager Name not ID***
 // ===================================================================
 function allEmployees() {
-    // need to order by last name
-    var query = "SELECT first_name, last_name, role.title, department.name, role.salary, manager_id FROM employee INNER JOIN role ON employee.role_id = role.id INNER JOIN department ON role.department_id = department.id";
-    connection.query(query, function(err, res) {
-      console.log(res)
-      console.table(res, ["first_name:", "last_name:", "role.title:", "department.name:", "role.salary:", "manager_id:"]);
-      start();
-    });
-  } 
+  // need to order by last name
+  var query = "SELECT first_name, last_name, role.title, department.name, role.salary, manager_id FROM employee INNER JOIN role ON employee.role_id = role.id INNER JOIN department ON role.department_id = department.id ORDER BY employee.last_name";
+  connection.query(query, function(err, res) {
+    console.table(res);
+    start();
+  });
+} 
 
 // ===================================================================
 // Add
@@ -151,8 +150,7 @@ function updateEmployee (){
 }
 
 // ===================================================================
-// Delete
+// Delete  **NOT NEEDED***
 // ===================================================================
 
-
-// **NOT NEEDED*******************************************************
+module.exports = employees;
